@@ -8,7 +8,7 @@ export default function News(props) {
     const [totalResults, setTotalResults] = useState(0)
 
     let updateNews = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${props.apiKey}&pageSize=${props.pageSize}&category=${props.category}&page=1`
+        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${props.apiKey}&pageSize=${props.pageSize}&category=science&page=1`
         let data = await fetch(url)
         let parsedData = await data.json()
         console.log(parsedData);
@@ -23,6 +23,7 @@ export default function News(props) {
         console.log(parsedData);
         setArticles(parsedData.articles)
         setPage(page - 1)
+
 
     }
     const handleNextClick = async () => {
